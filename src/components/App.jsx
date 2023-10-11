@@ -11,7 +11,7 @@ const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
     console.log('Contacts did update');
   }, [contacts]);
-
+  //
   useEffect(() => {
     const contacts = localStorage.getItem('contacts');
     console.log('Component did mount');
