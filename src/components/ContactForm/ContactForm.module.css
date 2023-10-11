@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 30px;
+  border: 2px solid aliceblue;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.addContactBtn,
+.addContactBtnYellow {
+  width: 100px;
+}
+
+.addContactBtnYellow {
+  background-color: lightgoldenrodyellow;
+}
+
+.formLabel {
+  margin-right: 4px;
+}
