@@ -40,12 +40,6 @@ const ContactForm = ({ contacts, addContact }) => {
     }
   };
 
-  const checkContact = () => {
-    if (isContactExists) {
-      alert(`${name} is already in contacts`);
-    }
-  };
-
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label>
