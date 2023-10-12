@@ -8,20 +8,24 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-    console.log('Contacts did update');
-  }, [contacts]);
-  //
-  useEffect(() => {
-    const contacts = localStorage.getItem('contacts');
-    console.log('Component did mount');
-    if (contacts) {
-      const parsedContacts = JSON.parse(contacts);
+    const savedContacts = localStorage.getItem('contacts');
+    console.log('getContacts');
+    if (savedContacts.length > 0) {
+      const parsedContacts = JSON.parse(savedContacts);
       setContacts(parsedContacts);
     }
   }, []);
 
+  useEffect(() => {
+    if (contacts.length > 0) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+    } else {
+      localStorage.setItem('contacts', []);
+    }
+  }, [contacts]);
+
   const handleDelete = id => {
+    console.log(id);
     const newContacts = contacts.filter(contact => contact.id !== id);
     setContacts(newContacts);
   };
